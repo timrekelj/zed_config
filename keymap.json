@@ -2,7 +2,9 @@
     {
         "context": "Workspace",
         "bindings": {
-            "ctrl-shift-n": "file_finder::Toggle"
+            "ctrl-shift-n": "file_finder::Toggle",
+            "ctrl-7": "terminal_panel::ToggleFocus",
+            "ctrl-1": "project_panel::ToggleFocus"
         }
     },
     {
@@ -12,7 +14,7 @@
             "ctrl-n": "editor::SelectNext",
             "ctrl-p": "editor::SelectPrevious",
             "ctrl-u": ["workspace::SendKeystrokes", "1 5 k z z"],
-            "ctrl-d": ["workspace::SendKeystrokes", "1 5 j z z"],
+            "ctrl-d": ["workspace::SendKeystrokes", "1 5 j z z"]
         }
     },
     {
@@ -34,6 +36,23 @@
             "space y": "editor::Copy",
             ">": "editor::Indent",
             "<": "editor::Outdent"
+        }
+    },
+    {
+        "context": "Terminal",
+        "bindings": {
+            "escape": "terminal_panel::ToggleFocus",
+            "ctrl-7": "workspace::ToggleBottomDock",
+            "alt-right": "pane::ActivateNextItem",
+            "alt-left": "pane::ActivatePrevItem",
+            "ctrl-w": "pane::CloseActiveItem"
+        }
+    },
+    {
+        "context": "ProjectPanel && not_editing",
+        "bindings": {
+            "escape": "project_panel::ToggleFocus",
+            "ctrl-1": "workspace::ToggleLeftDock"
         }
     }
 ]
