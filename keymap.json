@@ -2,17 +2,17 @@
     {
         "context": "Workspace",
         "bindings": {
-            "ctrl-shift-n": "file_finder::Toggle",
-            "ctrl-7": "terminal_panel::ToggleFocus",
-            "ctrl-1": "project_panel::ToggleFocus"
+            "ctrl-shift-n": "file_finder::Toggle"
         }
     },
     {
         "context": "Editor",
         "bindings": {
             "ctrl-c": ["workspace::SendKeystrokes", "escape"],
+
             "ctrl-n": "editor::SelectNext",
             "ctrl-p": "editor::SelectPrevious",
+
             "ctrl-u": ["workspace::SendKeystrokes", "1 5 k z z"],
             "ctrl-d": ["workspace::SendKeystrokes", "1 5 j z z"]
         }
@@ -20,12 +20,23 @@
     {
         "context": "vim_mode == normal",
         "bindings": {
+            "space r r": "task::Rerun",
+            "space r c": "task::Spawn",
+
+            "space s a": "editor::ToggleCodeActions",
+            "space s u": "editor::GoToImplementation",
+
             "space d r": "editor::Rename",
+
             "space o": "editor::NewlineBelow",
             "space O": "editor::NewlineAbove",
+
+            "space y": "editor::Copy",
             "space p": "editor::Paste",
+
             "ctrl-down": "editor::AddSelectionBelow",
             "ctrl-up": "editor::AddSelectionAbove",
+
             "tab": "pane::ActivateNextItem",
             "ctrl-tab": "pane::ActivatePrevItem"
         }
@@ -33,7 +44,12 @@
     {
         "context": "vim_mode == visual",
         "bindings": {
+            "space a i": "assistant::InlineAssist",
+            "space a a": "assistant::QuoteSelection",
+
             "space y": "editor::Copy",
+            "space p": "editor::Paste",
+
             ">": "editor::Indent",
             "<": "editor::Outdent"
         }
@@ -42,7 +58,10 @@
         "context": "Terminal",
         "bindings": {
             "escape": "terminal_panel::ToggleFocus",
-            "ctrl-7": "workspace::ToggleBottomDock",
+
+            "ctrl-`": "workspace::ToggleBottomDock",
+            "ctrl-f": "workspace::ToggleZoom",
+
             "alt-right": "pane::ActivateNextItem",
             "alt-left": "pane::ActivatePrevItem",
             "ctrl-w": "pane::CloseActiveItem"
@@ -52,7 +71,14 @@
         "context": "ProjectPanel && not_editing",
         "bindings": {
             "escape": "project_panel::ToggleFocus",
-            "ctrl-1": "workspace::ToggleLeftDock"
+
+            "ctrl-shift-e": "workspace::ToggleLeftDock"
+        }
+    },
+    {
+        "context": "AssistantPanel",
+        "bindings": {
+            "ctrl-?": "workspace::ToggleRightDock"
         }
     }
 ]
