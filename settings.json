@@ -1,7 +1,8 @@
 {
+    "confirm_quit": true,
     "assistant": {
         "default_model": {
-            "provider": "anthropic",
+            "provider": "zed.dev",
             "model": "claude-3-5-sonnet-20240620"
         },
         "version": "2"
@@ -10,9 +11,10 @@
         "show": true
     },
     "vim_mode": true,
-    "ui_font_size": 16,
-    "buffer_font_size": 14,
-    "buffer_font_family": "JetBrains Mono",
+    "ui_font_size": 18,
+    "buffer_font_family": "JetBrainsMonoNL Nerd Font",
+    "ui_font_family": "JetBrainsMonoNL Nerd Font",
+    "buffer_font_size": 16,
     "relative_line_numbers": true,
     "tab_size": 4,
     "format_on_save": "off",
