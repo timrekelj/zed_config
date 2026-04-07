@@ -13,7 +13,7 @@
         }
     },
     {
-        "context": "vim_mode == normal",
+        "context": "vim_mode == normal || vim_mode == helix_normal",
         "bindings": {
             "tab": "pane::ActivateNextItem",
             "shift-tab": "pane::ActivatePreviousItem",

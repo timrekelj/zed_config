@@ -1,14 +1,5 @@
 [
     {
-        "label": "codex",
-        "command": "codex",
-        "use_new_terminal": true,
-        "reveal_target": "center",
-        "shell": "system",
-        "show_command": false,
-        "tags": ["codex"]
-    },
-    {
         "label": "run_postgresql",
         "command": "source ~/.pcm/current_connection && psql \"$PSQL_CONNECTION\" -x -c \"$(cat <<'EOF'\n$ZED_SELECTED_TEXT\nEOF\n)\"",
         "use_new_terminal": true,
