@@ -1,76 +1,48 @@
 [
-    {
-        "context": "Terminal",
-        "bindings": {
-            "ctrl-f": "workspace::ToggleZoom",
-            "ctrl-w": "pane::CloseActiveItem"
-        }
+  {
+    "context": "vim_mode == normal || vim_mode == helix_normal",
+    "bindings": {
+      "ctrl-u": ["workspace::SendKeystrokes", "1 5 k z z"],
+      "ctrl-d": ["workspace::SendKeystrokes", "1 5 j z z"],
+
+      "ctrl-b b": "editor::ToggleBookmark",
+      "ctrl-b l": "editor::ViewBookmarks",
+      "ctrl-b n": "editor::GoToNextBookmark",
+      "ctrl-b p": "editor::GoToPreviousBookmark",
+      "ctrl-b c": "workspace::ClearBookmarks",
     },
-    {
-        "context": "Editor && !Picker && !TerminalPanel && !AgentPanel",
-        "bindings": {
-            "ctrl-p": "file_finder::Toggle",
-        }
+  },
+  {
+    "context": "vim_mode == visual || vim_mode == operator || (vim_operator == a || vim_operator == i)",
+    "bindings": {
+      "shift-enter": ["task::Spawn", { "task_name": "run_postgresql" }],
+      "cmd-shift-enter": ["task::Spawn", { "task_name": "run_postgresql_fullscreen" }],
+
+      "ctrl-u": ["workspace::SendKeystrokes", "1 5 k z z"],
+      "ctrl-d": ["workspace::SendKeystrokes", "1 5 j z z"],
+
+      ">": "editor::Indent",
+      "<": "editor::Outdent",
+
+      "shift-s": "vim::PushAddSurrounds",
     },
-    {
-        "context": "vim_mode == normal || vim_mode == helix_normal",
-        "bindings": {
-            "tab": "pane::ActivateNextItem",
-            "shift-tab": "pane::ActivatePreviousItem",
+  },
+  {
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePreviousPane",
+      "ctrl-l": "workspace::ActivateNextPane",
 
-            "ctrl-u": ["workspace::SendKeystrokes", "1 5 k z z"],
-            "ctrl-d": ["workspace::SendKeystrokes", "1 5 j z z"],
+      "cmd-shift-a": "agent::ToggleFocus",
+      "cmd-shift-e": "project_panel::ToggleFocus",
+      "cmd-shift-g": "git_panel::ToggleFocus",
+      "cmd-shift-t": "terminal_panel::ToggleFocus",
 
-            "space r r": "task::Rerun",
-            "space r c": "task::Spawn",
+      "cmd-shift-l": "workspace::ToggleRightDock",
+      "cmd-shift-h": "workspace::ToggleLeftDock",
+      "cmd-shift-j": "workspace::ToggleBottomDock",
 
-            "space o": "editor::NewlineBelow",
-            "space O": "editor::NewlineAbove",
-
-            "space f": "editor::ToggleFold",
-
-            "space g b": "git::Blame",
-            "space g d": "editor::ToggleSelectedDiffHunks",
-            "space g r": "git::Restore",
-            "space g s": "git::ToggleStaged",
-            "space g S": "git::StageFile",
-            "space g n": "editor::GoToHunk",
-            "space g p": "editor::GoToPreviousHunk",
-
-            "space t": "workspace::NewCenterTerminal",
-        }
+      "cmd-alt-k": "agents_sidebar::ToggleThreadSwitcher",
+      "cmd-alt-n": "agent::NewThread",
     },
-    {
-        "context": "vim_mode == visual || vim_mode == operator || (vim_operator == a || vim_operator == i)",
-        "bindings": {
-            "shift-enter": ["task::Spawn", { "task_name": "run_postgresql" }],
-            "cmd-shift-enter": [
-                "task::Spawn",
-                { "task_name": "run_postgresql_fullscreen" }
-            ],
-
-            "ctrl-u": ["workspace::SendKeystrokes", "1 5 k z z"],
-            "ctrl-d": ["workspace::SendKeystrokes", "1 5 j z z"],
-
-            ">": "editor::Indent",
-            "<": "editor::Outdent",
-
-            "shift-s": "vim::PushAddSurrounds"
-        }
-    },
-    {
-        "bindings": {
-            "ctrl-h": "workspace::ActivatePreviousPane",
-            "ctrl-l": "workspace::ActivateNextPane",
-
-            "cmd-shift-a": "agent::ToggleFocus",
-            "cmd-shift-e": "project_panel::ToggleFocus",
-            "cmd-shift-g": "git_panel::ToggleFocus",
-            "cmd-shift-t": "terminal_panel::ToggleFocus",
-
-            "cmd-shift-l": "workspace::ToggleRightDock",
-            "cmd-shift-h": "workspace::ToggleLeftDock",
-            "cmd-shift-j": "workspace::ToggleBottomDock",
-        }
-    }
+  },
 ]

@@ -1,26 +1,31 @@
 {
-  "inlay_hints": {
-    "enabled": false
+  "cli_default_open_behavior": "new_window",
+  "format_on_save": "off",
+  "extend_comment_on_newline": false,
+  "show_whitespaces": "selection",
+  "preferred_line_length": 100,
+  "indent_guides": {
+    "enabled": false,
   },
-  "rounded_selection": true,
+  "buffer_font_features": {
+    "calt": false, // Disable ligatures
+  },
+  "ui_font_family": ".ZedMono",
+  "diff_view_style": "unified",
+  "inlay_hints": {
+    "show_type_hints": false,
+    "show_other_hints": false,
+    "show_background": true,
+    "show_value_hints": false,
+  },
   "agent_servers": {
     "opencode": {
       "favorite_config_option_values": {
-        "model": [
-          "openai/gpt-5.4",
-          "anthropic/claude-sonnet-4-6"
-        ]
+        "model": ["opencode-go/kimi-k2.6", "opencode-go/glm-5.1", "opencode-go/qwen3.6-plus"],
       },
-      "type": "registry"
+      "type": "registry",
     },
   },
-  "git": {
-    "inline_blame": {
-      "show_commit_summary": false,
-    },
-  },
-  "show_wrap_guides": true,
-  "buffer_line_height": "comfortable",
   "session": {
     "trust_all_worktrees": true,
   },
@@ -32,13 +37,21 @@
       "tab_size": 4,
     },
   },
-  "helix_mode": true,
   "soft_wrap": "editor_width",
-  "icon_theme": "Colored Zed Icons Theme Dark",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Colored Zed Icons Theme Dark",
+    "dark": "Colored Zed Icons Theme Dark",
+  },
   "agent": {
-    "show_turn_stats": true,
+    "expand_terminal_card": false,
+    "play_sound_when_agent_done": "when_hidden",
+    "dock": "right",
+    "show_merge_conflict_indicator": true,
+    "flexible": true,
+    "sidebar_side": "left",
     "use_modifier_to_send": false,
-    "default_profile": "write",
+    "default_profile": "ask",
     "model_parameters": [],
     "default_model": {
       "effort": "medium",
@@ -48,15 +61,16 @@
     },
   },
   "agent_ui_font_size": 18,
-  "show_edit_predictions": true,
+  "show_edit_predictions": false,
   "edit_predictions": {
+    "ollama": {},
     "provider": "zed",
     "mode": "subtle",
   },
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
-    "dark": "Dracula"
+    "dark": "Better Cursor",
   },
   "auto_install_extensions": {
     "html": true,
@@ -64,43 +78,26 @@
     "odin": true,
     "toml": true,
     "lua": true,
-    "fleet-themes": true,
-    "cursor": true,
     "colored-zed-icons-theme": true,
   },
   "git_panel": {
-    "default_width": 640,
     "collapse_untracked_diff": false,
-    "status_style": "label_color",
-    "tree_view": true,
     "dock": "right",
-    "button": true,
   },
   "project_panel": {
+    "dock": "left",
     "hide_root": true,
-    "diagnostic_badges": false,
     "show_diagnostics": "all",
-    "bold_folder_labels": false,
-    "auto_reveal_entries": true,
-    "file_icons": true,
-    "folder_icons": true,
-    "git_status": true,
-    "entry_spacing": "standard",
     "auto_fold_dirs": false,
     "indent_guides": { "show": "never" },
-    "indent_size": 20,
   },
-  "notification_panel": { "button": false },
   "outline_panel": { "button": false },
   "collaboration_panel": { "button": false },
   "wrap_guides": [100],
-  "unnecessary_code_fade": 0.8,
   "confirm_quit": true,
   "cursor_blink": false,
-  "tab_bar": { "show": true },
   "scrollbar": {
     "axes": {
-      "horizontal": true,
       "vertical": false,
     },
   },
@@ -108,34 +105,21 @@
     "file_icons": true,
     "git_status": true,
     "activate_on_close": "left_neighbour",
-    "show_close_button": "hover",
   },
-  "buffer_font_family": "SF Mono",
-  "ui_font_size": 18.0,
-  "ui_font_family": "SF Mono",
-  "buffer_font_size": 16.0,
   "relative_line_numbers": "enabled",
   "tab_size": 2,
   "vertical_scroll_margin": 8,
-  "format_on_save": "off",
-  "vim_mode": false,
-  "current_line_highlight": "line",
+  "vim_mode": true,
   "vim": {
-    "toggle_relative_line_numbers": true,
-    "cursor_shape": {
-      "visual": "block",
-      "insert": "inherit",
-      "normal": "block",
-    },
     "use_system_clipboard": "never",
   },
   "toolbar": {
+    "agent_review": false,
+    "selections_menu": false,
+    "breadcrumbs": false,
     "quick_actions": false,
   },
   "terminal": {
-    "blinking": "on",
-    "cursor_shape": "bar",
-    "dock": "right",
-    "toolbar": { "breadcrumbs": false },
+    "blinking": "off",
   },
 }
