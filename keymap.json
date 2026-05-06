@@ -5,11 +5,19 @@
       "ctrl-u": ["workspace::SendKeystrokes", "1 5 k z z"],
       "ctrl-d": ["workspace::SendKeystrokes", "1 5 j z z"],
 
-      "ctrl-b b": "editor::ToggleBookmark",
-      "ctrl-b l": "editor::ViewBookmarks",
-      "ctrl-b n": "editor::GoToNextBookmark",
-      "ctrl-b p": "editor::GoToPreviousBookmark",
-      "ctrl-b c": "workspace::ClearBookmarks",
+      "space b b": "editor::ToggleBookmark",
+      "space b l": "editor::ViewBookmarks",
+      "space b n": "editor::GoToNextBookmark",
+      "space b p": "editor::GoToPreviousBookmark",
+      "space b c": "workspace::ClearBookmarks",
+
+      "space t t": "task::Spawn",
+      "space t r": "task::Rerun",
+
+      "space d d": "debugger::Start",
+      "space d r": "debugger::Rerun",
+      "space d b": "editor::ToggleBreakpoint",
+      "space d c": "debugger::ClearAllBreakpoints",
     },
   },
   {
