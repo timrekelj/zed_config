@@ -13,11 +13,6 @@
 
       "space t t": "task::Spawn",
       "space t r": "task::Rerun",
-
-      "space d d": "debugger::Start",
-      "space d r": "debugger::Rerun",
-      "space d b": "editor::ToggleBreakpoint",
-      "space d c": "debugger::ClearAllBreakpoints",
     },
   },
   {
@@ -36,7 +31,20 @@
     },
   },
   {
+    "context": "Terminal",
     "bindings": {
+      "cmd-t": "workspace::NewTerminal",
+    },
+  },
+  {
+    "bindings": {
+      "shift-r": "vim::PushDeleteSurrounds",
+
+      "ctrl-~": null,
+      "ctrl-`": null,
+
+      "cmd-alt-f": "text_finder::Toggle",
+
       "ctrl-h": "workspace::ActivatePreviousPane",
       "ctrl-l": "workspace::ActivateNextPane",
 
@@ -51,6 +59,7 @@
 
       "cmd-alt-k": "agents_sidebar::ToggleThreadSwitcher",
       "cmd-alt-n": "agent::NewThread",
+      "cmd-shift-w": null,
     },
   },
 ]
