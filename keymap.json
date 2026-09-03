@@ -1,29 +1,14 @@
 [
   {
-    "context": "vim_mode == normal || vim_mode == helix_normal",
+    "context": "vim_mode == normal",
     "bindings": {
-      "ctrl-u": ["workspace::SendKeystrokes", "1 5 k z z"],
-      "ctrl-d": ["workspace::SendKeystrokes", "1 5 j z z"],
-
-      "space b b": "editor::ToggleBookmark",
-      "space b l": "editor::ViewBookmarks",
-      "space b n": "editor::GoToNextBookmark",
-      "space b p": "editor::GoToPreviousBookmark",
-      "space b c": "workspace::ClearBookmarks",
-
       "space t t": "task::Spawn",
       "space t r": "task::Rerun",
     },
   },
   {
-    "context": "vim_mode == visual || vim_mode == operator || (vim_operator == a || vim_operator == i)",
+    "context": "vim_mode == visual",
     "bindings": {
-      "shift-enter": ["task::Spawn", { "task_name": "run_postgresql" }],
-      "cmd-shift-enter": ["task::Spawn", { "task_name": "run_postgresql_fullscreen" }],
-
-      "ctrl-u": ["workspace::SendKeystrokes", "1 5 k z z"],
-      "ctrl-d": ["workspace::SendKeystrokes", "1 5 j z z"],
-
       ">": "editor::Indent",
       "<": "editor::Outdent",
 
@@ -31,13 +16,10 @@
     },
   },
   {
-    "context": "Terminal",
     "bindings": {
-      "cmd-t": "workspace::NewTerminal",
-    },
-  },
-  {
-    "bindings": {
+      "ctrl-u": ["workspace::SendKeystrokes", "1 5 k z z"],
+      "ctrl-d": ["workspace::SendKeystrokes", "1 5 j z z"],
+
       "shift-r": "vim::PushDeleteSurrounds",
 
       "ctrl-~": null,
@@ -57,8 +39,6 @@
       "cmd-shift-h": "workspace::ToggleLeftDock",
       "cmd-shift-j": "workspace::ToggleBottomDock",
 
-      "cmd-alt-k": "agents_sidebar::ToggleThreadSwitcher",
-      "cmd-alt-n": "agent::NewThread",
       "cmd-shift-w": null,
     },
   },
